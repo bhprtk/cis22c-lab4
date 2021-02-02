@@ -3,22 +3,34 @@ import java.util.NoSuchElementException;
 public class QueueTest {
 	public static void main(String[] args) {
 		
-		System.out.println("********************************** Testing Constructor\n");
+		System.out.println("********************************** Test(1) Constructor\n");
 		
 		Queue<Integer> Q1 = new Queue<>();
 		System.out.println("Should print an empty queue: " + Q1);
 		
-		Queue<Integer> Q2 = new Queue<>();
-		System.out.println("Should print an empty queue: " + Q2);
+		Queue<Integer> anotherQ1 = new Queue<>();
+		System.out.println("Should print an empty queue: " + anotherQ1);
 		
 		
 		
 		
 		
 		
+		System.out.println("************************************* Test(2) toString()\n");
+		Queue<Integer> Q2 = new Queue<>();		
+		System.out.println("Should print an empty queue: " + Q2.toString());
+
+		Q2.enqueue(1);
+		Q2.enqueue(2);
+		Q2.enqueue(3);
+		System.out.println("Should print 1 2 3: " + Q2.toString());
 		
 		
-		System.out.println("************************************* Testing enqueue()\n");
+		
+		
+		
+		
+		System.out.println("************************************* Test(3) enqueue()\n");
 		
 		Queue<Integer> Q3 = new Queue<>();
 		Q3.enqueue(1);
@@ -32,7 +44,7 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("************************************* Testing getLength()\n");
+		System.out.println("************************************* Test(4) getLength()\n");
 		Queue<Integer> Q4 = new Queue<>();
 		System.out.println("Should print 0: " + Q3.getLength());
 		Q4.enqueue(1);
@@ -44,7 +56,7 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("************************************* Testing isEmpty()\n");
+		System.out.println("************************************* Test(5) isEmpty()\n");
 		Queue<Integer> Q5 = new Queue<>();
 		System.out.println("Should print true: " + Q5.isEmpty());
 		Q5.enqueue(1);
@@ -58,7 +70,7 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("************************************* Testing dequeue()\n");
+		System.out.println("************************************* Test(6) dequeue()\n");
 		Queue<Integer> Q6 = new Queue<>();
 		try {
 			Q6.dequeue();
@@ -76,7 +88,7 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("************************************* Testing getFront()\n");
+		System.out.println("************************************* Test(7) getFront()\n");
 		Queue<Integer> Q7 = new Queue<>();
 		try {
 			Q7.getFront();
@@ -91,14 +103,28 @@ public class QueueTest {
 
 		
 		
-		System.out.println("************************************* Testing toString()\n");
+		
+		
+		
+		
+		System.out.println("************************************* Test(8) equals()\n");
 		Queue<Integer> Q8 = new Queue<>();		
-		System.out.println("Should print an empty queue: " + Q8.toString());
-
+		Queue<Integer> Q8copy = new Queue<>();
+		
 		Q8.enqueue(1);
 		Q8.enqueue(2);
 		Q8.enqueue(3);
-		System.out.println("Should print 1 2 3: " + Q8.toString());
+		
+		Q8copy.enqueue(0);
+		Q8copy.enqueue(1);
+		Q8copy.enqueue(2);
+		System.out.println("Should print false: " + Q8.equals(Q8copy));
+		Q8copy.dequeue();
+		Q8copy.enqueue(3);
+		System.out.println("Should print true: " + Q8.equals(Q8copy));
+		System.out.println();
+
+		
 		
 		
 		System.out.println("******************************************************");

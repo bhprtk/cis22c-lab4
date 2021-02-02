@@ -95,8 +95,29 @@ public class Queue<T> {
      * @param o the Object to compare to this
      * @return whether o and this are equal
      */
+    @SuppressWarnings("unchecked")
     @Override public boolean equals(Object o) {
-        return false;
+        if(o == this) {
+            return true;
+        } else if (!(o instanceof Queue)) {
+            return false;
+        } else {
+            Queue<T> Q = (Queue<T>) o;
+            if (this.length != Q.length) {
+                return false;
+            } else {
+                Node temp1 = this.front;
+                Node temp2 = Q.front;
+                while (temp1 != null) { //Lists are same length
+                    if (!(temp1.data.equals(temp2.data))) {
+                        return false;
+                    }
+                    temp1 = temp1.next;
+                    temp2 = temp2.next;
+                }
+                return true;
+            }
+        }
     }
    
     /********************************************************************** MUTATORS **/   
