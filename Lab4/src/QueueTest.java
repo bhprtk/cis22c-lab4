@@ -63,13 +63,31 @@ public class QueueTest {
 		try {
 			Q6.dequeue();
 		} catch(NoSuchElementException e) {
-			System.out.println(e.getMessage());
+			System.out.println("Should print error: " + e.getMessage());
 		}
 		Q6.enqueue(1);
 		Q6.enqueue(2);
 		Q6.enqueue(3);
 		Q6.dequeue();
 		System.out.println("Should print 2 3: " + Q6);
+
+		
+		
+		
+		
+		
+		System.out.println("************************************* Testing getFront()\n");
+		Queue<Integer> Q7 = new Queue<>();
+		try {
+			Q7.getFront();
+		} catch(NoSuchElementException e) {
+			System.out.println("Should print error: " + e.getMessage());
+		}
+		Q7.enqueue(1);
+		Q7.enqueue(2);
+		Q7.enqueue(3);
+		System.out.println("Should print 1: " + Q7.getFront());
+		System.out.println();
 
 		
 		

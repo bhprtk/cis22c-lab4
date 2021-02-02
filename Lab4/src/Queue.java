@@ -66,7 +66,11 @@ public class Queue<T> {
      * precondition is violated
      */
     public T getFront() throws NoSuchElementException {
-        return null;
+    	if(isEmpty()) {
+    		throw new NoSuchElementException("getFront(): "
+    				+ "The list is empty, cannot get front!");
+    	}
+    	return front.data;
     }
    
     /**
