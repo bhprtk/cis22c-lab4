@@ -22,7 +22,7 @@ public class Queue<T> {
     private Node front;
     private Node end;
    
-    /****CONSTRUCTORS****/
+    /************************************************************************* CONSTRUCTORS **/
    
     /**
      * Default constructor for the Queue class
@@ -40,7 +40,20 @@ public class Queue<T> {
      * @postcondition a new Queue object which is
      * an identical, but distinct, copy of original
      */
-    public Queue(Queue<T> original) {}
+    public Queue(Queue<T> original) {
+//    	if(original == null) {
+//    		return;
+//    	}
+//    	if(original.length == 0) {
+//    		length = 0;
+//    		front = end = null;
+//    	} else {
+//    		Node N = original.front;
+//    		while(N != null) {
+//    			
+//    		}
+//    	}
+    }
    
     /********************************************************************** ACCESSORS **/
    
@@ -90,7 +103,15 @@ public class Queue<T> {
      * @postcondition a new node at the end
      * of the Queue
      */
-    public void enqueue(T data) {}
+    public void enqueue(T data) {
+	   if (length == 0) { //edge case
+	      front = end = new Node(data);
+	   } else { //general case
+	      end.next = new Node(data);
+	      end = end.next;
+	   }
+	   length++;
+	}
    
     /**
      * Removes the front element in the Queue
@@ -113,8 +134,12 @@ public class Queue<T> {
      */
     @Override public String toString() {
         String result = "";
-        result += "\n";
-        return result;
+        Node N = front;
+        while(N != null) {
+        	result += N.data + " ";
+        	N = N.next;
+        }
+        return result += "\n";
     }   
    
 }
