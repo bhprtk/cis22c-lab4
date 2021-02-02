@@ -126,6 +126,24 @@ public class QueueTest {
 
 		
 		
+		System.out.println("************************************* Test(9) Copy Constructor()\n");
+		Queue<Integer> Q9 = new Queue<>();		
+		Queue<Integer> Q9copy = new Queue<>(Q9);		
+		
+		System.out.println("Should print true: " + Q9.equals(Q9copy));
+		Q9.enqueue(1);
+		Q9.enqueue(2);
+		Q9.enqueue(3);
+		
+		System.out.println("Should print false: " + Q9.equals(Q9copy));
+
+		
+		Queue<Integer> Q9copy2 = new Queue<>(Q9);		
+
+		System.out.println("Should print true: " + Q9.equals(Q9copy2));
+		System.out.println("Should print 1 2 3: " + Q9copy2);
+
+
 		
 		System.out.println("******************************************************");
 	}

@@ -41,18 +41,19 @@ public class Queue<T> {
      * an identical, but distinct, copy of original
      */
     public Queue(Queue<T> original) {
-//    	if(original == null) {
-//    		return;
-//    	}
-//    	if(original.length == 0) {
-//    		length = 0;
-//    		front = end = null;
-//    	} else {
-//    		Node N = original.front;
-//    		while(N != null) {
-//    			
-//    		}
-//    	}
+    	if(original == null) {
+    		return;
+    	}
+    	if(original.length == 0) {
+    		length = 0;
+    		front = end = null;
+    	} else {
+    		Node N = original.front;
+    		while(N != null) {
+    			enqueue(N.data);
+    			N = N.next;
+    		}
+    	}
     }
    
     /********************************************************************** ACCESSORS **/
