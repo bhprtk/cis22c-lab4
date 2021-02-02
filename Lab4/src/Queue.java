@@ -123,8 +123,11 @@ public class Queue<T> {
      */
     public void dequeue() throws NoSuchElementException {
     	if(isEmpty()) {
-    		
+    		throw new NoSuchElementException("dequeue(): "
+    				+ "The list is empty, cannot dequeue!");
     	}
+    	front = front.next;
+    	length--;
     }
     
     /********************************************************************** ADDITONAL OPERATIONS **/
