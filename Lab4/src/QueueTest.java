@@ -91,6 +91,14 @@ public class QueueTest {
 
 		
 		
+		System.out.println("************************************* Testing toString()\n");
+		Queue<Integer> Q8 = new Queue<>();		
+		System.out.println("Should print an empty queue: " + Q8.toString());
+
+		Q8.enqueue(1);
+		Q8.enqueue(2);
+		Q8.enqueue(3);
+		System.out.println("Should print 1 2 3: " + Q8.toString());
 		
 		
 		System.out.println("******************************************************");
