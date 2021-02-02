@@ -74,7 +74,7 @@ public class Queue<T> {
      * @return the length from 0 to n
      */
     public int getLength() {
-        return -1;
+        return length;
     }
    
     /**

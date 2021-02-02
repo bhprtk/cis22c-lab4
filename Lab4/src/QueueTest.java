@@ -26,6 +26,19 @@ public class QueueTest {
 		Q3.enqueue(3);
 		System.out.println("Should print 1 2 3: " + Q3);
 		
+		
+		
+		
+		
+		
+		System.out.println("************************************* Testing enqueue()\n");
+		Queue<Integer> Q4 = new Queue<>();
+		System.out.println("Should print 0: " + Q3.getLength());
+		Q4.enqueue(1);
+		Q4.enqueue(2);
+		Q4.enqueue(3);
+		System.out.println("Should print 3: " + Q3.getLength());
+
 
 		
 		
@@ -43,6 +56,6 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("******************************************************");
+		System.out.println("\n******************************************************");
 	}
 }
