@@ -82,7 +82,7 @@ public class Queue<T> {
      * @return whether the Queue is empty
      */
     public boolean isEmpty() {
-        return false;
+        return length == 0;
     }
    
     /**
@@ -121,7 +121,11 @@ public class Queue<T> {
      * @postcondition the front element has
      * been removed
      */
-    public void dequeue() throws NoSuchElementException {}
+    public void dequeue() throws NoSuchElementException {
+    	if(isEmpty()) {
+    		
+    	}
+    }
     
     /********************************************************************** ADDITONAL OPERATIONS **/
    

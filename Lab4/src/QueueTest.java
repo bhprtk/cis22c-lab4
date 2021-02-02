@@ -31,7 +31,7 @@ public class QueueTest {
 		
 		
 		
-		System.out.println("************************************* Testing enqueue()\n");
+		System.out.println("************************************* Testing getLength()\n");
 		Queue<Integer> Q4 = new Queue<>();
 		System.out.println("Should print 0: " + Q3.getLength());
 		Q4.enqueue(1);
@@ -43,7 +43,13 @@ public class QueueTest {
 		
 		
 		
-		
+		System.out.println("\n************************************* Testing isEmpty()\n");
+		Queue<Integer> Q5 = new Queue<>();
+		System.out.println("Should print true: " + Q5.isEmpty());
+		Q5.enqueue(1);
+		Q5.enqueue(2);
+		Q5.enqueue(3);
+		System.out.println("Should print false: " + Q5.isEmpty());
 		
 		
 		
