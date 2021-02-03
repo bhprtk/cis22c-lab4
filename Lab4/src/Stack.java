@@ -7,7 +7,7 @@
 import java.util.NoSuchElementException;
 
 
-public class Stack<T> {
+public class Stack<T extends Comparable<T>> {
     private class Node {
         private T data;
         private Node next;
@@ -126,6 +126,32 @@ public class Stack<T> {
 		}
 	}
    
+	/**
+	 * Determines whether data is sorted in ascending order by calling its recursive
+	 * helper method isSorted() Note: when length == 0 data is (trivially) sorted
+	 * 
+	 * @return whether the data is sorted
+	 */
+	public boolean isSorted() {
+		return isSorted(top);
+	}
+
+	/**
+	 * Helper method to isSorted Recursively determines whether data is sorted
+	 * 
+	 * @param node the current node
+	 * @return whether the data is sorted
+	 */
+	private boolean isSorted(Node node) {
+		if(node == null || node.next == null) {
+			return true;
+		}
+		if(node.data.compareTo(node.next.data) == 1) {
+			return false;
+		}
+		return isSorted(node.next);
+	}
+	
     /****MUTATORS****/
    
     /**
