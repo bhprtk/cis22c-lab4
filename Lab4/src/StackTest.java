@@ -149,7 +149,21 @@ public class StackTest {
 		System.out.println("Should print true: " + S11.isSorted());
 		System.out.println();
 
-		System.out.println("******************************************************");
+		System.out.println("************************************* Test(12) linearSearch()\n");
+		Stack<String> S12 = new Stack<>();
+		System.out.println("Should print -1: " + S12.linearSearch("tomato"));
+		S12.push("tomato");
+		S12.push("pickle");
+		S12.push("ketchup");
+		S12.push("lettuce");
+		S12.push("mayo");
+
+		System.out.println("Should print 5: " + S12.linearSearch("tomato"));
+		System.out.println("Should print 3: " + S12.linearSearch("ketchup"));
+		System.out.println("Should print -1: " + S12.linearSearch("fries"));
+		System.out.println();
+
+		System.out.println("****************************************************** End of StackTest");
 
 	}
 }

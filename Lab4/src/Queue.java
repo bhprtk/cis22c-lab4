@@ -161,15 +161,15 @@ public class Queue<T extends Comparable<T>> {
      * the element is considered not found
      */
     public int linearSearch(T element) {
-    	int index = 0;
+    	int position = 1;
     	if(length > 0) {
     		Node iterator = front;
     		while(iterator != null) {
     			if(iterator.data.compareTo(element) == 0) {
-    				return index;
+    				return position;
     			}
     			iterator = iterator.next;
-    			index++;
+    			position++;
     		}
     	}
         return -1;

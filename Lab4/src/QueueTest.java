@@ -157,11 +157,11 @@ public class QueueTest {
 		Q12.enqueue("lettuce");
 		Q12.enqueue("mayo");
 
-		System.out.println("Should print 0: " + Q12.linearSearch("tomato"));
-		System.out.println("Should print 2: " + Q12.linearSearch("ketchup"));
+		System.out.println("Should print 1: " + Q12.linearSearch("tomato"));
+		System.out.println("Should print 3: " + Q12.linearSearch("ketchup"));
 		System.out.println("Should print -1: " + Q12.linearSearch("fries"));
 		System.out.println();
 
-		System.out.println("******************************************************");
+		System.out.println("****************************************************** End of QueueTest");
 	}
 }
