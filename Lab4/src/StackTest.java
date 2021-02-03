@@ -70,7 +70,32 @@ public class StackTest {
 		S6.push(2);
 		S6.push(3);
 		S6.pop();
-		System.out.println("Shoulr print 2 1: " + S6);
+		System.out.println("Should print 2 1: " + S6);
+		System.out.println("Should print 2: " + S6.getLength());
+		System.out.println();
+
+		
+		
+		
+		System.out.println("************************************* Test(7) peek()\n");
+		Stack<Integer> S7 = new Stack<>();
+
+		try {
+			S7.peek();
+		} catch (NoSuchElementException e) {
+			System.out.println("Should print error: " + e.getMessage());
+		}
+		
+		S7.push(1);
+		S7.push(2);
+		S7.push(3);
+		System.out.println("Should print 3: " + S7.peek());
+		System.out.println();
+
+		
+		
+		
+		
 		
 		
 		System.out.println("******************************************************");

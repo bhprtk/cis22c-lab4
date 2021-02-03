@@ -51,9 +51,10 @@ public class Stack<T> {
      * precondition is violated
      */
     public T peek() throws NoSuchElementException {
-
-       return null;
-
+		if(isEmpty()) {
+			throw new NoSuchElementException("peek(): The list is empty, cannot peek!");
+		}
+		return top.data;
     }
    
     /**
