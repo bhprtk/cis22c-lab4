@@ -109,7 +109,13 @@ public class Stack<T> {
      * @postcondition the top element has
      * been removed
      */
-    public void pop() throws NoSuchElementException{}
+    public void pop() throws NoSuchElementException{
+    	if(isEmpty()) {
+    		throw new NoSuchElementException("pop(): The list is empty, cannot pop!");
+    	}
+    	top = top.next;
+    	length--;
+    }
    
     /****ADDITONAL OPERATIONS****/
    

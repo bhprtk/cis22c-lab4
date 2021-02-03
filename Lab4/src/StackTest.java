@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 
 /**
  * StackTest.java
@@ -56,7 +57,20 @@ public class StackTest {
 		System.out.println();
 		
 		
+		System.out.println("************************************* Test(6) pop()\n");
 		
+		Stack<Integer> S6 = new Stack<>();
+		try {
+			S6.pop();
+		} catch (NoSuchElementException e) {
+			System.out.println("Should print error: " + e.getMessage());
+		}
+
+		S6.push(1);
+		S6.push(2);
+		S6.push(3);
+		S6.pop();
+		System.out.println("Shoulr print 2 1: " + S6);
 		
 		
 		System.out.println("******************************************************");
