@@ -1,6 +1,6 @@
 
 /**
- * Queue.java
+ * QueueTest.java
  * @author Naqib Khan
  * @author Pratik Bhandari
  */

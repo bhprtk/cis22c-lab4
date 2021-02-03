@@ -22,9 +22,7 @@ public class Queue<T> {
 	private Node front;
 	private Node end;
 
-	/*************************************************************************
-	 * CONSTRUCTORS
-	 **/
+	/**** CONSTRUCTORS ****/
 
 	/**
 	 * Default constructor for the Queue class
@@ -59,9 +57,7 @@ public class Queue<T> {
 		}
 	}
 
-	/**********************************************************************
-	 * ACCESSORS
-	 **/
+	/**** ACCESSORS ****/
 
 	/**
 	 * Returns the value stored at the front of the Queue
@@ -127,9 +123,8 @@ public class Queue<T> {
 		}
 	}
 
-	/**********************************************************************
-	 * MUTATORS
-	 **/
+	/**** MUTATORS ****/
+
 	/**
 	 * Inserts a new value at the end of the Queue
 	 * 
@@ -161,9 +156,7 @@ public class Queue<T> {
 		length--;
 	}
 
-	/**********************************************************************
-	 * ADDITONAL OPERATIONS
-	 **/
+	/**** ADDITONAL OPERATIONS ****/
 
 	/**
 	 * Returns the values stored in the Queue as a String, separated by a blank
