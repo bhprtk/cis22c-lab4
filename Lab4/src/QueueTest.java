@@ -97,7 +97,7 @@ public class QueueTest {
 		System.out.println("Should print true: " + Q8.equals(Q8copy));
 		System.out.println();
 
-		System.out.println("************************************* Test(9) Copy Constructor()\n");
+		System.out.println("************************************* Test(9) Copy Constructor\n");
 		Queue<Integer> Q9 = new Queue<>();
 		Queue<Integer> Q9copy = new Queue<>(Q9);
 
@@ -112,6 +112,25 @@ public class QueueTest {
 
 		System.out.println("Should print true: " + Q9.equals(Q9copy2));
 		System.out.println("Should print 1 2 3: " + Q9copy2);
+		
+		
+		
+		
+		System.out.println("************************************* Test(10) printReverse()\n");
+		Queue<Integer> Q10 = new Queue<>();
+		Q10.enqueue(1);
+		Q10.enqueue(2);
+		Q10.enqueue(3);
+		System.out.print("Should print 3 2 1: ");
+		Q10.printReverse();
+		Q10.enqueue(4);
+		Q10.enqueue(5);
+		Q10.enqueue(6);
+		Q10.enqueue(7);
+		System.out.print("Should print 7 6 5 4 3 2 1: ");
+		Q10.printReverse();
+		System.out.println();
+		
 
 		System.out.println("******************************************************");
 	}
