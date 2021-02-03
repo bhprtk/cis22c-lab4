@@ -93,9 +93,25 @@ public class StackTest {
 		System.out.println();
 
 		
+	
+		System.out.println("************************************* Test(8) equals()\n");
+		Stack<Integer> S8 = new Stack<>();
+		Stack<Integer> S8copy = new Stack<>();
+
+		S8.push(1);
+		S8.push(2);
+		S8.push(3);
 		
+		S8copy.push(1);
+		S8copy.push(2);
+		S8copy.push(2);
 		
-		
+		System.out.println("Should print false: " + S8.equals(S8copy));
+		S8copy.pop();
+		S8copy.push(3);
+		System.out.println("Should print true: " + S8.equals(S8copy));
+		System.out.println();
+
 		
 		
 		System.out.println("******************************************************");

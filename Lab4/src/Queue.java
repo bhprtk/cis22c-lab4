@@ -111,7 +111,7 @@ public class Queue<T> {
 			} else {
 				Node temp1 = this.front;
 				Node temp2 = Q.front;
-				while (temp1 != null) { // Lists are same length
+				while (temp1 != null) { 
 					if (!(temp1.data.equals(temp2.data))) {
 						return false;
 					}

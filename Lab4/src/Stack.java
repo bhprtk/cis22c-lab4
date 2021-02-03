@@ -79,11 +79,31 @@ public class Stack<T> {
      * @param Q the Stack to compare to this
      * @return whether Q and this are equal
      */
-    @Override public boolean equals(Object o) {
-
-        return false;
-
-    }
+	@SuppressWarnings("unchecked")
+    @Override 
+    public boolean equals(Object o) {
+		if(o == this) {
+			return true;
+		} else if(!(o instanceof Stack)) {
+			return false;
+		} else {
+			Stack<T> S = (Stack<T>) o;
+			if (this.length != S.length) {
+				return false;
+			} else {
+				Node temp1 = this.top;
+				Node temp2 = S.top;
+				while (temp1 != null) { 
+					if (!(temp1.data.equals(temp2.data))) {
+						return false;
+					}
+					temp1 = temp1.next;
+					temp2 = temp2.next;
+				}
+				return true;
+			}
+		}
+	}
    
     /****MUTATORS****/
    
