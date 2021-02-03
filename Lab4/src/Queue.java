@@ -175,12 +175,12 @@ public class Queue<T> {
      * @param node the current node
      */
 
-   private void printReverse(Node node) {
+    private void printReverse(Node node) {
 	   if(node.next != null) {
 		   printReverse(node.next);
 	   }
 	   System.out.print(node.data + " ");
-    }
+	}
 
 	/**
 	 * Returns the values stored in the Queue as a String, separated by a blank

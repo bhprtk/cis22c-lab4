@@ -160,6 +160,32 @@ public class Stack<T> {
     }
    
     /****ADDITONAL OPERATIONS****/
+    
+    
+    /**
+     * Prints in reverse order to the
+     * console, followed by a new line
+     * by calling the recursive helper
+     * method printReverse
+     */
+    public void printReverse() {
+       printReverse(top);
+       System.out.println();
+    }
+   
+    /**
+     * Recursively prints to the console
+     * the data in reverse order (no loops)
+     * @param node the current node
+     */
+
+    private void printReverse(Node node) {
+	   if(node.next != null) {
+		   printReverse(node.next);
+	   }
+	   System.out.print(node.data + " ");
+	}
+
    
     /**
      * Returns the values stored in the Stack

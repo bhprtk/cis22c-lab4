@@ -130,6 +130,27 @@ public class StackTest {
 
 		
 		
+		
+
+		System.out.println("************************************* Test(10) printReverse()\n");
+		Stack<Integer> S10 = new Stack<>();
+		S10.push(1);
+		S10.push(2);
+		S10.push(3);
+		System.out.print("Should print 1 2 3: ");
+		S10.printReverse();
+		S10.push(4);
+		S10.push(5);
+		S10.push(6);
+		S10.push(7);
+		System.out.print("Should print 1 2 3 4 5 6 7: ");
+		S10.printReverse();
+		System.out.println();
+		
+		
+		
+		
+		
 		System.out.println("******************************************************");
 
 	}
