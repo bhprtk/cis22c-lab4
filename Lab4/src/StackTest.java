@@ -112,6 +112,22 @@ public class StackTest {
 		System.out.println("Should print true: " + S8.equals(S8copy));
 		System.out.println();
 
+		System.out.println("************************************* Test(9) Copy Constructor()\n");
+		Stack<Integer> S9 = new Stack<>();
+		Stack<Integer> S9copy = new Stack<>(S9);
+		System.out.println("Should print true: " + S9.equals(S9copy));
+		S9.push(1);
+		S9.push(2);
+		S9.push(3);
+		System.out.println("Should print false: " + S9.equals(S9copy));
+
+		
+		Stack<Integer> S9copy2 = new Stack<>(S9);
+
+		System.out.println("Should print true: " + S9.equals(S9copy2));
+
+		System.out.println("Should print 3 2 1: " + S9copy2);
+
 		
 		
 		System.out.println("******************************************************");

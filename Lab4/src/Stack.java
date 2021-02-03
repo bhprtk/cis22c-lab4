@@ -6,6 +6,7 @@
 
 import java.util.NoSuchElementException;
 
+
 public class Stack<T> {
     private class Node {
         private T data;
@@ -38,7 +39,27 @@ public class Stack<T> {
      * @postcondition a new Stack object which is
      * an identical, but distinct, copy of original
      */
-    public Stack(Stack<T> original) {}
+    public Stack(Stack<T> original) {
+    	if (original == null) {
+			return;
+		}
+		if (original.length == 0) {
+			length = 0;
+			top = null;
+		} else {
+			Node N = original.top;
+			Stack<T> tempStack = new Stack<>();
+			while (N != null) {
+				tempStack.push(N.data);
+				N = N.next;
+			}
+			Node tempNode = tempStack.top;
+			while(tempNode != null) {
+				push(tempNode.data);
+				tempNode = tempNode.next;
+			}
+		}
+    }
    
     /****ACCESSORS****/
    
