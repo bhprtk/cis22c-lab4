@@ -7,6 +7,7 @@
 
 import java.util.NoSuchElementException;
 
+
 public class Queue<T extends Comparable<T>> {
 	private class Node {
 		private T data;
@@ -149,6 +150,31 @@ public class Queue<T extends Comparable<T>> {
 		return isSorted(node.next);
 	}
 
+	/**
+     * Uses the iterative linear search
+     * algorithm to locate a specific
+     * element and return its position
+     * @param element the value to search for
+     * @return the location of value
+     * from 1 to length
+     * Note that in the case length==0
+     * the element is considered not found
+     */
+    public int linearSearch(T element) {
+    	int index = 0;
+    	if(length > 0) {
+    		Node iterator = front;
+    		while(iterator != null) {
+    			if(iterator.data.compareTo(element) == 0) {
+    				return index;
+    			}
+    			iterator = iterator.next;
+    			index++;
+    		}
+    	}
+        return -1;
+    }
+	
 	/**** MUTATORS ****/
 
 	/**

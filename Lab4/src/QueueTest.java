@@ -148,6 +148,20 @@ public class QueueTest {
 
 		System.out.println();
 
+		System.out.println("************************************* Test(12) linearSearch()\n");
+		Queue<String> Q12 = new Queue<>();
+		System.out.println("Should print -1: " + Q12.linearSearch("tomato"));
+		Q12.enqueue("tomato");
+		Q12.enqueue("pickle");
+		Q12.enqueue("ketchup");
+		Q12.enqueue("lettuce");
+		Q12.enqueue("mayo");
+
+		System.out.println("Should print 0: " + Q12.linearSearch("tomato"));
+		System.out.println("Should print 2: " + Q12.linearSearch("ketchup"));
+		System.out.println("Should print -1: " + Q12.linearSearch("fries"));
+		System.out.println();
+
 		System.out.println("******************************************************");
 	}
 }
