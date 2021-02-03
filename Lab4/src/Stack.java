@@ -61,15 +61,15 @@ public class Stack<T> {
      * @return the length from 0 to n
      */
     public int getLength() {
-        return -1;
+        return length;
     }
    
     /**
      * Determines whether a Stack is empty
-     * @return whether the Stack is emtpy
+     * @return whether the Stack is empty
      */
     public boolean isEmpty() {
-        return false;
+        return length == 0;
     }
    
     /**
@@ -93,7 +93,13 @@ public class Stack<T> {
      * @postcondition a new node at the end
      * of the Stack
      */
-    public void push(T data) {}
+    public void push(T data) {
+	   Node N = new Node(data);
+	   N.next = top; //also works when top == null (i.e. an empty Stack)
+	   top = N;
+	   length++;
+
+	}
    
     /**
      * Removes the top element of the Stack
@@ -115,8 +121,12 @@ public class Stack<T> {
      */
     @Override public String toString() {
         String result = "";
-        result += "\n";
-        return result;
+        Node N = top;
+        while(N != null) {
+        	result += N.data + " ";
+        	N = N.next;
+        }
+        return result += "\n";
     }   
    
 }
