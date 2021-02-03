@@ -7,7 +7,7 @@
 
 import java.util.NoSuchElementException;
 
-public class Queue<T> {
+public class Queue<T extends Comparable<T>> {
 	private class Node {
 		private T data;
 		private Node next;
@@ -111,7 +111,7 @@ public class Queue<T> {
 			} else {
 				Node temp1 = this.front;
 				Node temp2 = Q.front;
-				while (temp1 != null) { 
+				while (temp1 != null) {
 					if (!(temp1.data.equals(temp2.data))) {
 						return false;
 					}
@@ -121,6 +121,32 @@ public class Queue<T> {
 				return true;
 			}
 		}
+	}
+
+	/**
+	 * Determines whether data is sorted in ascending order by calling its recursive
+	 * helper method isSorted() Note: when length == 0 data is (trivially) sorted
+	 * 
+	 * @return whether the data is sorted
+	 */
+	public boolean isSorted() {
+		return isSorted(front);
+	}
+
+	/**
+	 * Helper method to isSorted Recursively determines whether data is sorted
+	 * 
+	 * @param node the current node
+	 * @return whether the data is sorted
+	 */
+	private boolean isSorted(Node node) {
+		if(node == null || node.next == null) {
+			return true;
+		}
+		if(node.data.compareTo(node.next.data) == 1) {
+			return false;
+		}
+		return isSorted(node.next);
 	}
 
 	/**** MUTATORS ****/
@@ -157,29 +183,27 @@ public class Queue<T> {
 	}
 
 	/**** ADDITONAL OPERATIONS ****/
-	
-	 /**
-     * Prints in reverse order to the
-     * console, followed by a new line
-     * by calling the recursive helper
-     * method printReverse
-     */
-    public void printReverse() {
-       printReverse(front);
-       System.out.println();
-    }
-   
-    /**
-     * Recursively prints to the console
-     * the data in reverse order (no loops)
-     * @param node the current node
-     */
 
-    private void printReverse(Node node) {
-	   if(node.next != null) {
-		   printReverse(node.next);
-	   }
-	   System.out.print(node.data + " ");
+	/**
+	 * Prints in reverse order to the console, followed by a new line by calling the
+	 * recursive helper method printReverse
+	 */
+	public void printReverse() {
+		printReverse(front);
+		System.out.println();
+	}
+
+	/**
+	 * Recursively prints to the console the data in reverse order (no loops)
+	 * 
+	 * @param node the current node
+	 */
+
+	private void printReverse(Node node) {
+		if (node.next != null) {
+			printReverse(node.next);
+		}
+		System.out.print(node.data + " ");
 	}
 
 	/**

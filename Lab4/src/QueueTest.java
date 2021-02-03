@@ -112,10 +112,7 @@ public class QueueTest {
 
 		System.out.println("Should print true: " + Q9.equals(Q9copy2));
 		System.out.println("Should print 1 2 3: " + Q9copy2);
-		
-		
-		
-		
+
 		System.out.println("************************************* Test(10) printReverse()\n");
 		Queue<Integer> Q10 = new Queue<>();
 		Q10.enqueue(1);
@@ -130,7 +127,26 @@ public class QueueTest {
 		System.out.print("Should print 7 6 5 4 3 2 1: ");
 		Q10.printReverse();
 		System.out.println();
-		
+
+		System.out.println("************************************* Test(11) isSorted()\n");
+
+		Queue<Integer> Q11 = new Queue<>();
+		System.out.println("Should print true: " + Q11.isSorted());
+
+		Q11.enqueue(1);
+		System.out.println("Should print true: " + Q11.isSorted());
+
+		Q11.enqueue(2);
+		Q11.enqueue(3);
+		Q11.enqueue(4);
+		System.out.println("Should print true: " + Q11.isSorted());
+		Q11.enqueue(9);
+		Q11.enqueue(7);
+		Q11.enqueue(8);
+
+		System.out.println("Should print false: " + Q11.isSorted());
+
+		System.out.println();
 
 		System.out.println("******************************************************");
 	}
