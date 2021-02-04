@@ -162,6 +162,41 @@ public class QueueTest {
 		System.out.println("Should print -1: " + Q12.linearSearch("fries"));
 		System.out.println();
 
-		System.out.println("****************************************************** End of QueueTest");
+		System.out.println("************************************* Test(13) binarySearch()\n");
+		Queue<Integer> Q13 = new Queue<>();
+
+		Q13.enqueue(1);
+		Q13.enqueue(2);
+		Q13.enqueue(3);
+		Q13.enqueue(4);
+		Q13.enqueue(5);
+		Q13.enqueue(6);
+		Q13.enqueue(7);
+
+		System.out.println("Should print 3: " + Q13.binarySearch(3));
+		System.out.println("Should print 6: " + Q13.binarySearch(6));
+
+		Queue<String> anotherQ13 = new Queue<>();
+
+		anotherQ13.enqueue("zebra");
+		anotherQ13.enqueue("apple");
+		anotherQ13.enqueue("banana");
+		anotherQ13.enqueue("carrot");
+		anotherQ13.enqueue("donut");
+		anotherQ13.enqueue("egg");
+
+		try {
+			anotherQ13.binarySearch("banana");
+		} catch (IllegalStateException e) {
+			System.out.println("Should print error: " + e.getMessage());
+		}
+
+		anotherQ13.dequeue();
+
+		System.out.println("Should print -1: " + anotherQ13.binarySearch("Apple"));
+		System.out.println("Should print 3: " + anotherQ13.binarySearch("carrot"));
+		System.out.println();
+
+		System.out.println("*************************************************************** End of QueueTest");
 	}
 }

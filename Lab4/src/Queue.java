@@ -7,7 +7,6 @@
 
 import java.util.NoSuchElementException;
 
-
 public class Queue<T extends Comparable<T>> {
 	private class Node {
 		private T data;
@@ -141,40 +140,87 @@ public class Queue<T extends Comparable<T>> {
 	 * @return whether the data is sorted
 	 */
 	private boolean isSorted(Node node) {
-		if(node == null || node.next == null) {
+		if (node == null || node.next == null) {
 			return true;
 		}
-		if(node.data.compareTo(node.next.data) == 1) {
+		if (node.data.compareTo(node.next.data) >= 1) {
 			return false;
 		}
 		return isSorted(node.next);
 	}
 
 	/**
-     * Uses the iterative linear search
-     * algorithm to locate a specific
-     * element and return its position
-     * @param element the value to search for
-     * @return the location of value
-     * from 1 to length
-     * Note that in the case length==0
-     * the element is considered not found
-     */
-    public int linearSearch(T element) {
-    	int position = 1;
-    	if(length > 0) {
-    		Node iterator = front;
-    		while(iterator != null) {
-    			if(iterator.data.compareTo(element) == 0) {
-    				return position;
-    			}
-    			iterator = iterator.next;
-    			position++;
-    		}
-    	}
-        return -1;
-    }
-	
+	 * Uses the iterative linear search algorithm to locate a specific element and
+	 * return its position
+	 * 
+	 * @param element the value to search for
+	 * @return the location of value from 1 to length Note that in the case
+	 *         length==0 the element is considered not found
+	 */
+	public int linearSearch(T element) {
+		int position = 1;
+		if (length > 0) {
+			Node iterator = front;
+			while (iterator != null) {
+				if (iterator.data.compareTo(element) == 0) {
+					return position;
+				}
+				iterator = iterator.next;
+				position++;
+			}
+		}
+		return -1;
+	}
+
+	/**
+	 * Returns the location from 1 to length where value is located by calling the
+	 * private helper method binarySearch
+	 * 
+	 * @param value the value to search for
+	 * @return the location where value is stored from 1 to length, or -1 to
+	 *         indicate not found
+	 * @precondition isSorted()
+	 * @throws IllegalStateException when the precondition is violated.
+	 */
+	public int binarySearch(T value) throws IllegalStateException {
+		if (!isSorted()) {
+			throw new IllegalStateException("binarySearch(): " + "Queue is not sorted, cannot binary search!");
+		}
+
+		return binarySearch(1, length, value);
+	}
+
+	/**
+	 * Searches for the specified value in by implementing the recursive
+	 * binarySearch algorithm
+	 * 
+	 * @param low   the lowest bounds of the search
+	 * @param high  the highest bounds of the search
+	 * @param value the value to search for
+	 * @return the location at which value is located from 1 to length or -1 to
+	 *         indicate not found
+	 */
+	private int binarySearch(int low, int high, T value) {
+		if (high < low) {
+			return -1;
+		}
+		int mid = low + (high - low) / 2;
+		Node iterator = front;
+		int index = 1;
+
+		while (index < mid) {
+			iterator = iterator.next;
+			index++;
+		}
+		if (iterator.data.compareTo(value) == 0) {
+			return mid;
+		} else if (iterator.data.compareTo(value) == -1) {
+			return binarySearch(mid + 1, high, value);
+		} else {
+			return binarySearch(low, mid - 1, value);
+		}
+	}
+
 	/**** MUTATORS ****/
 
 	/**
