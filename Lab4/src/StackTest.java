@@ -19,10 +19,10 @@ public class StackTest {
 		System.out.println("************************************* Test(2) toString()\n");
 		Stack<Integer> S2 = new Stack<>();
 		S2.push(1);
-		System.out.println("Should print 1: " + S2);
+		System.out.println("Should print 1: " + S2.toString());
 		S2.push(2);
 		S2.push(3);
-		System.out.println("Should print 3 2 1: " + S2);
+		System.out.println("Should print 3 2 1: " + S2.toString());
 
 		System.out.println("************************************* Test(3) push()\n");
 		Stack<Integer> S3 = new Stack<>();
