@@ -163,6 +163,29 @@ public class StackTest {
 		System.out.println("Should print -1: " + S12.linearSearch("fries"));
 		System.out.println();
 
+		System.out.println("************************************* Test(13) binarySearch()\n");
+
+		Stack<Integer> S13 = new Stack<>();
+		S13.push(1);
+		S13.push(2);
+		S13.push(3);
+
+		try {
+			S13.binarySearch(2);
+		} catch (IllegalStateException e) {
+			System.out.println("Should print error: " + e.getMessage());
+		}
+		Stack<String> anotherS13 = new Stack<>();
+
+		anotherS13.push("dog");
+		anotherS13.push("cat");
+		anotherS13.push("baboon");
+		anotherS13.push("ant");
+
+		System.out.println("Should print 1: " + anotherS13.binarySearch("ant"));
+		System.out.println("Should print 3: " + anotherS13.binarySearch("cat"));
+		System.out.println();
+
 		System.out.println("****************************************************** End of StackTest");
 
 	}
