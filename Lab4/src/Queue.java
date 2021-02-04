@@ -214,7 +214,7 @@ public class Queue<T extends Comparable<T>> {
 		}
 		if (iterator.data.compareTo(value) == 0) {
 			return mid;
-		} else if (iterator.data.compareTo(value) == -1) {
+		} else if (iterator.data.compareTo(value) <= -1) {
 			return binarySearch(mid + 1, high, value);
 		} else {
 			return binarySearch(low, mid - 1, value);

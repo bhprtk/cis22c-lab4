@@ -1,8 +1,8 @@
 
 /**
  * Stack.java
- * @author
- * @author
+ * @author Naqib Khan
+ * @author Pratik Bhandari
  */
 
 import java.util.NoSuchElementException;
@@ -148,7 +148,7 @@ public class Stack<T extends Comparable<T>> {
 		if (node == null || node.next == null) {
 			return true;
 		}
-		if (node.data.compareTo(node.next.data) == 1) {
+		if (node.data.compareTo(node.next.data) >= 1) {
 			return false;
 		}
 		return isSorted(node.next);
@@ -219,7 +219,7 @@ public class Stack<T extends Comparable<T>> {
 		}
 		if (iterator.data.compareTo(value) == 0) {
 			return mid;
-		} else if (iterator.data.compareTo(value) == -1) {
+		} else if (iterator.data.compareTo(value) <= -1) {
 			return binarySearch(mid + 1, high, value);
 		} else {
 			return binarySearch(low, mid - 1, value);
