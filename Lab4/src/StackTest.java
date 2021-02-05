@@ -1,4 +1,3 @@
-import java.util.NoSuchElementException;
 
 /**
  * StackTest.java
@@ -6,6 +5,8 @@ import java.util.NoSuchElementException;
  * @author Naqib Khan
  * @author Pratik Bhandari
  */
+
+import java.util.NoSuchElementException;
 
 public class StackTest {
 	public static void main(String[] args) {

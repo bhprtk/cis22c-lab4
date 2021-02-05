@@ -38,11 +38,11 @@ public class QueueTest {
 
 		System.out.println("************************************* Test(4) getLength()\n");
 		Queue<Integer> Q4 = new Queue<>();
-		System.out.println("Should print 0: " + Q3.getLength());
+		System.out.println("Should print 0: " + Q4.getLength());
 		Q4.enqueue(1);
 		Q4.enqueue(2);
 		Q4.enqueue(3);
-		System.out.println("Should print 3: " + Q3.getLength());
+		System.out.println("Should print 3: " + Q4.getLength());
 		System.out.println();
 
 		System.out.println("************************************* Test(5) isEmpty()\n");
@@ -145,6 +145,18 @@ public class QueueTest {
 		Q11.enqueue(8);
 
 		System.out.println("Should print false: " + Q11.isSorted());
+
+		Queue<String> Q11Food = new Queue<>();
+
+		Q11Food.enqueue("donut");
+		Q11Food.enqueue("apple");
+		Q11Food.enqueue("banana");
+		Q11Food.enqueue("carrot");
+
+		System.out.println("Should print false: " + Q11Food.isSorted());
+
+		Q11Food.dequeue();
+		System.out.println("Should print true: " + Q11Food.isSorted());
 
 		System.out.println();
 
